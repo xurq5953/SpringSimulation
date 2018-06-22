@@ -10,11 +10,11 @@ import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
-    //XY坐标
+  
     private float downX, downY;
-    //调整参数的SeekBar
+
     private SeekBar dampingSeekBar, stiffnessSeekBar;
-    //X/Y方向速度相关的帮助类
+
     private VelocityTracker velocityTracker;
 
     @Override
@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
                     velocityTracker.addMovement(event);
                     return true;
                 case MotionEvent.ACTION_MOVE:
-                    box.setTranslationX(event.getX() - downX);
                     box.setTranslationY(event.getY() - downY);
                     velocityTracker.addMovement(event);
                     return true;
@@ -43,13 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 case MotionEvent.ACTION_CANCEL:
                     content.performClick();
                     velocityTracker.computeCurrentVelocity(1000);
-                    if (box.getTranslationX() != 0) {
-                        SpringAnimation animX = new SpringAnimation(box, SpringAnimation.TRANSLATION_X, 0);
-                        animX.getSpring().setStiffness(getStiffnessSeekBar());
-                        animX.getSpring().setDampingRatio(getDampingSeekBar());
-                        animX.setStartVelocity(velocityTracker.getXVelocity());
-                        animX.start();
-                    }
                     if (box.getTranslationY() != 0) {
                         SpringAnimation animY = new SpringAnimation(box, SpringAnimation.TRANSLATION_Y, 0);
                         animY.getSpring().setStiffness(getStiffnessSeekBar());
@@ -64,20 +56,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * 从SeekBar获取自定义的强度
-     *
-     * @return 强度float
-     */
+
     private float getStiffnessSeekBar() {
         return Math.max(stiffnessSeekBar.getProgress(), 1f);
     }
 
-    /**
-     * 从SeekBar获取自定义的阻尼
-     *
-     * @return 阻尼float
-     */
     private float getDampingSeekBar() {
         return dampingSeekBar.getProgress() / 100f;
     }
