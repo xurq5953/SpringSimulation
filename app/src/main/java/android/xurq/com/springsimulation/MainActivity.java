@@ -1,16 +1,19 @@
 package android.xurq.com.springsimulation;
 
+import android.app.ActionBar;
 import android.support.animation.SpringAnimation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
 
-  
+
     private float downX, downY;
 
     private SeekBar dampingSeekBar, stiffnessSeekBar;

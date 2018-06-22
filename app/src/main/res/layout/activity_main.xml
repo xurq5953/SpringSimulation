@@ -64,4 +64,41 @@
         android:layout_height="0.5dp"
         android:background="@android:color/darker_gray" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="end"
+        android:textSize="15sp"
+        android:text="软件质量测试与保证"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="10dp"
+        android:text="徐润擎"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="10dp"
+        android:text="孙启明"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="10dp"
+        android:text="高杨飞"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="10dp"
+        android:text="江承远"/>
+
 </LinearLayout>
